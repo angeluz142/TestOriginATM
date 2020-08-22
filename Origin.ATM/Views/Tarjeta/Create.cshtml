@@ -1,0 +1,76 @@
+﻿@model Origin.ATM.Models.Tarjeta
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Tarjeta</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="nro" class="control-label"></label>
+                <input asp-for="nro" class="form-control" />
+                <span asp-validation-for="nro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="clave" class="control-label"></label>
+                <input asp-for="clave" class="form-control" />
+                <span asp-validation-for="clave" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fechaAlta" class="control-label"></label>
+                <input asp-for="fechaAlta" class="form-control" />
+                <span asp-validation-for="fechaAlta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fechaVencimiento" class="control-label"></label>
+                <input asp-for="fechaVencimiento" class="form-control" />
+                <span asp-validation-for="fechaVencimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="estado" class="control-label"></label>
+                <input asp-for="estado" class="form-control" />
+                <span asp-validation-for="estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="intentosClave" class="control-label"></label>
+                <input asp-for="intentosClave" class="form-control" />
+                <span asp-validation-for="intentosClave" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="saldo" class="control-label"></label>
+                <input asp-for="saldo" class="form-control" />
+                <span asp-validation-for="saldo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="idTipo" class="control-label"></label>
+                <select asp-for="idTipo" class ="form-control" asp-items="ViewBag.idTipo"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="idCliente" class="control-label"></label>
+                <select asp-for="idCliente" class ="form-control" asp-items="ViewBag.idCliente"></select>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="activo" /> @Html.DisplayNameFor(model => model.activo)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

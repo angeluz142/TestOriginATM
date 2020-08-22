@@ -1,0 +1,76 @@
+﻿@*@model IEnumerable<Origin.ATM.Models.Tipo_Operacion>
+
+    @{
+        ViewData["Title"] = "Index";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h1>Index</h1>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.descripcion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.activo)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.activo)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>*@
+
+
+
+
+
+
+@*@model IEnumerable<Origin.ATM.Models.Tipo_Operacion>*@
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Operaciones</h1>
+
+<div class="row">
+    <div class="col-3">
+        <div class="list-group" id="list-tab" role="tablist">
+            <button id="btnBalance" class="list-group-item list-group-item-action" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Balance</button>
+            @*<button id="btnRetiro" class="list-group-item list-group-item-action" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Retiro</button>*@
+            <a id="btnRetiro" asp-controller="Tipo_Operacion" asp-action="Retiro" class="list-group-item list-group-item-action" data-toggle="list" role="tab" aria-controls="profile">Retiro</a>
+        </div>
+    </div>
+</div>
+
+
+@*<script>
+    $.ajax({
+        url: "/Tipo_Operacion/Retiro",
+        method: "Get",
+        success: function (response) {
+
+        }
+    })
+</script>*@

@@ -1,0 +1,29 @@
+﻿@model Origin.ATM.Models.ValidationResult
+@{
+    ViewData["Title"] = "Resultado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Resultado</h1>
+
+
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalle de la operacion</h1>
+
+
+    @if (Model.valido)
+    {
+        <div class="alert alert-success" role="alert">
+            @Model.mensaje;
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            @Model.mensaje;
+        </div>
+    }

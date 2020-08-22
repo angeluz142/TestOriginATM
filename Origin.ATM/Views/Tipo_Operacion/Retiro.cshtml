@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Retiro";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Retiro</h1>
+
+<h4>Indique el monto a retirar.</h4>
+ 
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Retirar" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label for="monto" class="control-label"></label>
+                <input type="number" id="monto" name="monto" class="form-control" />
+                @*<span asp-validation-for="monto" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                <button type="submit" id="btnAceptar" class="btn btn-primary">Aceptar</button>
+                <button type="button" id="btnLimpiar" class="btn btn-danger">Limpiar</button>
+            </div>
+        </form>
+    </div>
+</div>
